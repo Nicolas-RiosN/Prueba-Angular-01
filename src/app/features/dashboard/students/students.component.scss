@@ -1,0 +1,57 @@
+
+.mat-dialog-content {
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  .row {
+    gap: 20px; // Espacio entre los elementos
+    width: 100%; // Ajustar el ancho al contenedor
+  }
+  
+  mat-form-field {
+    flex: 1; // Permite que los campos de formulario se expandan para ocupar el mismo espacio
+    min-width: 200px; // Ancho mínimo para evitar que los campos sean demasiado pequeños
+  }
+
+
+::ng-deep .container{
+    border-radius: 0%;
+    overflow: hidden;
+    width: 500px;
+    padding-bottom: 30px;
+}
+
+.form-container {
+    border: 1px solid #ccc; /* Añade un borde de 1px sólido gris */
+    border-radius: 0; /* Elimina el border-radius para hacerlo rectangular */
+    padding: 20px; /* Añade espaciado interior para separar el contenido del borde */
+    padding-bottom: 20px;
+}
+
+.suc-btn{
+    left: 15px;
+}
+
+mat-form-field{
+    width: 95%;
+}
+
+
+
+.male-btn{
+    padding-left: 5%;
+}
+
+.female-btn{
+    padding-left: 5%;
+}
+
+.others-btn{
+    padding-left: 5%;
+}
+
+actions{
+    padding: 0px 25px 20px;
+}

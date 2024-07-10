@@ -1,0 +1,57 @@
+<div class="form-container">
+  <section class="container">
+    <div mat-dialog-title>
+      <h1 appFontSize>Formulario de estudiante</h1>
+    </div>
+
+    <div class="mat-dialog-content" mat-dialog-content>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label appFontSize>Nombre</mat-label>
+          <input matInput type="text" placeholder="Ejemplo: Nicolas" [(ngModel)]="newStudent.nombre">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label appFontSize>Apellido</mat-label>
+          <input matInput type="text" placeholder="Ejemplo: Rios" [(ngModel)]="newStudent.apellido">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label appFontSize>Correo</mat-label>
+          <input matInput type="text" placeholder="Ejemplo: email@email.com" [(ngModel)]="newStudent.correo">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label appFontSize>Fecha Nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="newStudent.fechaNacimiento">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-radio-group [(ngModel)]="newStudent.genero" aria-label="Select an option">
+          <mat-label appFontSize>Genero:</mat-label>
+          <mat-radio-button class="male-btn" value="Masculino">Masculino</mat-radio-button>
+          <mat-radio-button class="female-btn" value="Femenino">Femenino</mat-radio-button>
+          <mat-radio-button class="others-btn" value="Otros">Otros</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label appFontSize>Curso a elección</mat-label>
+          <mat-select [(ngModel)]="newStudent.curso">
+            <mat-option *ngFor="let val of educacion" [value]="val">{{ val }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="actions" mat-dialog-actions>
+        <button appFontSize class="dn-btn" mat-raised-button (click)="closeDialog()">Cancelar</button>
+        <button appFontSize class="suc-btn" mat-raised-button (click)="guardarEstudiante()">Guardar</button>
+      </div>
+    </div>
+  </section>
+</div>

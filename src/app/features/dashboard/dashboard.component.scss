@@ -1,0 +1,40 @@
+spacer {
+    flex: 1 1 auto;
+  }
+
+
+.example-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.app-toolbar {
+    background-color: #3f51b5; /* Color toolbar */
+    color: white;
+    opacity: 90%;
+}
+
+
+.icon-hambur{
+    color: white; /* Color del boron hamburguesa*/
+}
+
+  
+.app-sidenav {
+    background-color: #ffffff; /* Fondo blanco */
+    border-right: 1px solid #e0e0e0; /* Línea divisoria */
+}
+  
+  
+.mat-nav-list .mat-list-item:hover {
+    background-color: #e0e0e0; /* Color al pasar el ratón */
+}
+
+.container-section{
+    margin: 2%;
+}
+
+.add-student-button{
+    margin-left: 47%;
+}
+
