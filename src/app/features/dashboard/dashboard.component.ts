@@ -11,14 +11,14 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DashboardComponent {
   dataSource = new MatTableDataSource<any>([]);
-  displayedColumns: string[] = ['nombre', 'apellido', 'correo', 'fechaNacimiento', 'genero', 'curso'];
+  displayedColumns: string[] = ['nombreApellido', 'correo', 'fechaNacimiento', 'genero', 'curso'];
 
   constructor(public dialog: MatDialog) {}
 
   openStudentsComponent() {
     const dialogRef = this.dialog.open(StudentsComponent, {
-      width: '400px',
-      data: { estudiantes: this.dataSource.data } // Pasar this.dataSource.data como estudiantes
+      width: '2000px',
+      data: { estudiantes: this.dataSource.data }
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -8,10 +8,11 @@ import { AlumnosComponent } from './features/alumnos/alumnos.component';
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    AlumnosComponent
+    AlumnosComponent,
   ],
   imports: [
     BrowserModule,

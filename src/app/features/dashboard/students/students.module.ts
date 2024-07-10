@@ -4,12 +4,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
   ]
 })
 export class StudentsModule { }

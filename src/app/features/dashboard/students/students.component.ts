@@ -9,9 +9,9 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 export class StudentsComponent {
 
   educacion: string[] = [
-    'Programacion 1',
-    'Introduccion a la salchipapa 2',
-    'Introduccion a la milanesa 1',
+    'Matematicas',
+    'Lenguaje',
+    'Historia',
     'Hice lo que pude con el codigo'
   ];
   newStudent = {
@@ -20,7 +20,8 @@ export class StudentsComponent {
     correo: '',
     fechaNacimiento: '',
     genero: '',
-    curso: ''
+    curso: '',
+    nombreApellido: ''
   };
 
   constructor(
@@ -33,8 +34,14 @@ export class StudentsComponent {
   }
 
   guardarEstudiante() {
+    // Combina nombre y apellido antes de guardar
+    this.newStudent.nombreApellido = `${this.newStudent.nombre} ${this.newStudent.apellido}`;
+  
+    // Agrega el nuevo estudiante a la lista
     this.data.estudiantes.push({ ...this.newStudent });
-    this.dialogRef.close(this.data.estudiantes.slice()); // Enviar una copia actualizada de this.data.estudiantes
+  
+    // Cierra el diálogo y envía una copia actualizada de this.data.estudiantes
+    this.dialogRef.close(this.data.estudiantes.slice());
   }
 
   closeDialog() {

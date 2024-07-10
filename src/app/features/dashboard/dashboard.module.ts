@@ -19,6 +19,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FullNamePipe } from '../../shared/pipes/full-name.pipe';
 
 
 
@@ -27,7 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DashboardComponent,
     StudentsComponent,
     FontSizeDirective,
-    StudentsComponent
+    StudentsComponent,
+    FullNamePipe
   ],
   exports: [DashboardComponent],
   imports: [

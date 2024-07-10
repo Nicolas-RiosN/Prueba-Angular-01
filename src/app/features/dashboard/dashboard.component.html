@@ -12,7 +12,7 @@
     <button (click)="drawer.toggle()" mat-icon-button class="icon-hambur" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="app-tittle" appFontSize>My App</span>
+    <span class="app-tittle" appFontSize>ABM Estudiantes</span>
     <span class="spacer"></span>
   </mat-toolbar>
 
@@ -39,23 +39,28 @@
         <mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
       </ng-container>
 
+      <ng-container matColumnDef="nombreApellido">
+        <mat-header-cell appFontSize *matHeaderCellDef> Nombre Completo </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row | fullName }} </mat-cell>
+      </ng-container>      
+
       <ng-container matColumnDef="correo">
-        <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+        <mat-header-cell appFontSize *matHeaderCellDef> Correo </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.correo}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="fechaNacimiento">
-        <mat-header-cell *matHeaderCellDef> Fecha Nacimiento </mat-header-cell>
+        <mat-header-cell appFontSize *matHeaderCellDef> Fecha Nacimiento </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.fechaNacimiento | date}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="genero">
-        <mat-header-cell *matHeaderCellDef> Genero </mat-header-cell>
+        <mat-header-cell appFontSize *matHeaderCellDef> Genero </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.genero}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="curso">
-        <mat-header-cell *matHeaderCellDef> Curso </mat-header-cell>
+        <mat-header-cell appFontSize *matHeaderCellDef> Curso </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.curso}} </mat-cell>
       </ng-container>
 
