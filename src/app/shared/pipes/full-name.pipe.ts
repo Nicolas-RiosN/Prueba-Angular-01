@@ -4,6 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'fullName'
 })
 export class FullNamePipe implements PipeTransform {
+
   transform(value: any): string {
     if (!value || typeof value !== 'object') {
       return '';

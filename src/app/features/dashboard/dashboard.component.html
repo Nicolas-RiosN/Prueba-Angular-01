@@ -20,7 +20,7 @@
     <div class="example-button-row">
       <div class="example-flex-container">
         <div class="example-button-container">
-          <button (click)="openStudentsComponent()" class="add-student-button" mat-fab extended>
+          <button (click)="editarEstudiante()" class="add-student-button" mat-fab extended>
             <mat-icon>favorite</mat-icon>
             Nuevo Alumno
           </button>
@@ -30,7 +30,7 @@
 
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="nombre">
-        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-header-cell appFontSize *matHeaderCellDef> Nombre </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
       </ng-container>
 
@@ -40,9 +40,9 @@
       </ng-container>
 
       <ng-container matColumnDef="nombreApellido">
-        <mat-header-cell appFontSize *matHeaderCellDef> Nombre Completo </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Nombre Completo </mat-header-cell>
         <mat-cell *matCellDef="let row"> {{ row | fullName }} </mat-cell>
-      </ng-container>      
+      </ng-container>         
 
       <ng-container matColumnDef="correo">
         <mat-header-cell appFontSize *matHeaderCellDef> Correo </mat-header-cell>
@@ -62,6 +62,18 @@
       <ng-container matColumnDef="curso">
         <mat-header-cell appFontSize *matHeaderCellDef> Curso </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.curso}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell appFontSize *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" (click)="editarEstudiante(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarEstudiante(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

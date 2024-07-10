@@ -11,14 +11,14 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DashboardComponent {
   dataSource = new MatTableDataSource<any>([]);
-  displayedColumns: string[] = ['nombreApellido', 'correo', 'fechaNacimiento', 'genero', 'curso'];
+  displayedColumns: string[] = ['nombreApellido', 'correo', 'fechaNacimiento', 'genero', 'curso', 'actions'];
 
   constructor(public dialog: MatDialog) {}
 
-  openStudentsComponent() {
+  editarEstudiante(estudiante?: any) {
     const dialogRef = this.dialog.open(StudentsComponent, {
-      width: '2000px',
-      data: { estudiantes: this.dataSource.data }
+      width: '600px',
+      data: { estudiantes: this.dataSource.data, estudiante: estudiante, editar: !!estudiante }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -26,5 +26,13 @@ export class DashboardComponent {
         this.dataSource.data = result;
       }
     });
+  }
+
+  eliminarEstudiante(estudiante: any) {
+    const index = this.dataSource.data.indexOf(estudiante);
+    if (index >= 0) {
+      this.dataSource.data.splice(index, 1);
+      this.dataSource.data = [...this.dataSource.data];
+    }
   }
 }

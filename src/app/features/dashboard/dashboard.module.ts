@@ -14,12 +14,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {  MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FullNamePipe } from '../../shared/pipes/full-name.pipe';
+
 
 
 
@@ -50,7 +51,9 @@ import { FullNamePipe } from '../../shared/pipes/full-name.pipe';
     MatTableModule,
     FormsModule,
     MatDialogModule,
-    
-  ]
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }, // Establece el locale como español (España)
+  ],
 })
 export class DashboardModule { }
